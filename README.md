@@ -1,6 +1,6 @@
 # MISCGrasp
 
-This is the repository that contains source code for the [NeuGrasp website](https://miscgrasp.github.io/).
+This is the repository that contains source code for the [MISCGrasp website](https://miscgrasp.github.io/).
 
 If you find PAPER_NAME useful for your work please cite:
 ```
