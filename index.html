@@ -495,19 +495,16 @@
                 <h2 class="title is-3">Physical Experiments</h2>
                 <div class="content has-text-justified">
                     <p>
-                        To assess our method's real-world performance, we conduct physical experiments involving two
-                        tasks under two camera settings, replicating those in the simulation. We directly transfer the
-                        trained model from the simulation to the real-world setting to evaluate their performance gap.
+                        Our experimental platform uses a UR5 robotic arm with a Robotiq 2-Finger 85 gripper, and grasp planning is 
+                        performed in a 0.4 × 0.4 × 0.4 m<sup>3</sup> workspace, with perception from an Intel RealSense 
+                        D435 depth sensor. We conduct both single-object and multi-object grasping experiments. Single-object tests 
+                        involve five EGAD objects 3D-printed at three sizes (3 cm, 6 cm, 9 cm) for power and pinch grasps. Multi-object 
+                        experiments include 9 EGAD objects, 14 Berkeley adversarial objects, 30 household items, and the single-object 
+                        set, all tested in pile scenarios to optimize resources and time. Each test is repeated 20 times with 10 objects per round.
                     </p>
                 </div>
-                <div class="content has-text-justified">
-                    <p>
-                        $\textbf{Real world Experiment Setting.}$ (a) Robot platform setup. (b) Upper: Packed object set
-                        with 10 objects. Bottom: Packed scene (c) Upper: Pile object set with 25 objects. Bottom: Pile
-                        scene </p>
-                </div>
                 <div class="column is-centered" style="margin-top: -20px;">
-                    <img src="./static/images/phy_set.png"></img>
+                    <img src="./static/images/real_obj.png"></img>
                 </div>
                 <div class="content has-text-centered" style="margin-top: 30px;">
                     <p>
