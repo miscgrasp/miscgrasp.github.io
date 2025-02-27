@@ -164,7 +164,7 @@
                       </span>
                       <!-- Code Link. -->
                       <span class="link-block">
-                        <a href="https://github.com/Fanqyu/NeuGrasp-Code"
+                        <a href="https://github.com/Fanqyu/MiscGrasp"
                            class="external-link button is-normal is-rounded is-dark">
                           <span class="icon">
                               <i class="fab fa-github"></i>
@@ -174,7 +174,7 @@
                       </span>
                       <!-- Dataset Link. -->
                       <span class="link-block">
-                        <a href="https://github.com/Fanqyu/NeuGrasp-Code"
+                        <a href="https://github.com/Fanqyu/MiscGrasp"
                            class="external-link button is-normal is-rounded is-dark">
                           <span class="icon">
                               <i class="far fa-images"></i>
@@ -277,7 +277,10 @@
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
-                    <p>
+                      <p align="center">
+                        <img src="./static/images/fig1_300.png" alt="" style="width:70%"></img>
+                    </p>
+<!--                     <p>
                         While grasp detection is an important part of any robotic manipulation pipeline, reliable and
                         accurate grasp detection in $SE(3)$ remains a research challenge. Many robotics applications in
                         unstructured environments such as the home or warehouse would benefit a lot from better grasp
@@ -289,7 +292,8 @@
                         would otherwise be needed. In order to accomplish this, we propose a novel variation on
                         EquiFormerV2 that leverages a UNet-style encoder-decoder architecture to enlarge the number of
                         points the model can handle. Our resulting method, which we name $\textit{OrbitGrasp}$,
-                        significantly outperforms baselines in both simulation and physical experiments. </p>
+                        significantly outperforms baselines in both simulation and physical experiments.
+                    </p> -->
                 </div>
             </div>
         </div>
@@ -315,9 +319,8 @@
         <div class="columns is-centered has-text-centered">
             <div class="column">
                 <h2 class="title is-3">Introduction</h2>
-                <h4 class="title is-4">Summary of Orbitgrasp</h4>
                 <div class="content has-text-justified">
-                    <p>
+<!--                     <p>
                         In this paper, we propose $\textbf{OrbitGrasp}$, an $SE(3)$-equivariant grasp learning framework
                         using spherical harmonics for 6-DoF grasp detection. Our method leverages
                         an $SE(3)$-equivariant network that maps each point in a point cloud to a grasp quality
@@ -327,19 +330,16 @@
                         an $S^1$ manifold embedded in $S^2$) of approach directions, defined relative to the
                         surface normal at each contact point. As shown below:
                     </p>
-                    <p align="center">
-                        <img src="./static/images/fig1_300.png" alt="" style="width:70%"></img>
-                    </p>
                     <p>
                         We infer an orbit of grasps (yellow ellipse) defined relative to the surface normal (red arrow)
                         at the contact point (pink dot). Since our model is equivariant over $SO(3)$, the optimal pose
                         (represented by the solid gripper) on the orbit rotates consistently with the scene (left and
                         right show a rotation by 90 degrees).
-                    </p>
+                    </p> -->
                     <p align="center">
                         <img src="./static/images/fig2_300.png"></img>
                     </p>
-                    <p>
+<!--                     <p>
                         OrbitGrasp divides the input point cloud into several sub-point clouds $B_i$ (neighborhoods
                         around center points $c_i$) and processes each through the network and
                         outputs a grasp quality function $f_p\colon S^2 \to \mathbb{R}$ for each point $p$ in $B_i$. The
@@ -349,36 +349,8 @@
                         queries corresponding $f_p(\cdot)$ to evaluate these grasp qualities along the orbit. The grasp
                         with the highest quality is then selected, thereby producing the optimal grasp pose $a^*$, as
                         shown on the right.
-                    </p>
+                    </p> -->
 
-                </div>
-                <h4 class="title is-4">Grasp Pose Representation</h4>
-                <div class="content has-text-justified">
-
-                    <p>
-                        Since our model only infers grasp quality over $S^2$, we must obtain the
-                        remaining orientation DoF. We accomplish this by constraining one of the two gripper fingers to
-                        make contact such that the object surface normal at the contact point is parallel to the gripper
-                        closing direction (see
-                        figure below). Specifically, for a point $p \in \mathcal{B}_i \subset
-                        B_i$ in region $B_i$ with object surface normal $n_p$, we constrain the hand y-axis (gripper
-                        closing direction) to be parallel to $n_p$. Therefore, valid hand orientations form a
-                        submanifold in $SO(3)$ homeomorphic to a 1-sphere $S^1$ which we call the $\textit{orbit}$ at
-                        $p$
-                        \begin{equation}
-                        O_{p} = \{R = [r_1, n_p, r_3] \in SO(3) \}
-                        \label{eqn:grasp_pose_orthogonal}
-                        \end{equation}
-                        where $r_1, n_p, r_3$ are the columns of the 3-by-3 rotation matrix $R$. Valid orientations are
-                        determined by the $z$-axis of the gripper (the approach direction of the hand) which may be any
-                        unit vector perpendicular to $n_p$. We may thus specify valid grasps by their approach vector
-                        $r_3 \in \overline{O}_{p} = \{ r_3 \in S^1 : n_p^\top r_3 = 0 \}$ since $r_1 = -n_p \times r_3$.
-                        In the figure below, green and blue denote the $y$, $z$ directions of the hand, and $n_p$ is the
-                        normal vector at $p$ (red). Black is the orbit of the approach direction.
-                    </p>
-                    <p align="center">
-                        <img src="./static/images/grasp_rep.png" style="width:25%;margin-bottom: -70px"></img>
-                    </p>
                 </div>
             </div>
         </div>
@@ -393,16 +365,16 @@
                 <div class="content has-text-justified">
                     <p>
                         We conduct four grasping experiments using four object sets: the EGAD test set, the pile and packed 
-                        test set, and the adversarial object set. These experiments focus on pinch and power grasps across 
-                        different scene types. The <strong>EGAD-Single</strong> experiment scales the EGAD test set 
+                        test set, and the adversarial object set. These experiments focus on both pinch and power grasps across 
+                        two scene type: <strong>Pile</strong> and <strong>Packed</strong>. The <strong>EGAD-Single</strong> experiment scales the EGAD test set 
                         to 147 objects, ranked by geometric complexity and grasp difficulty, and evaluates performance on easy, 
-                        medium, and hard sets. The <strong>Pile-Pile</strong> and <strong>Packed-Packed</strong>experiments use the pile and packed test 
+                        medium, and hard sets. The <strong>Pile-Pile</strong> and <strong>Packed-Packed</strong> experiments use the pile and packed test 
                         sets with 10 objects per scene, increasing complexity. The <strong>EGAD+Adv-Pile</strong> experiment combines the 
                         EGAD test set and adversarial object set to test pinch grasp in pile scenes with 10 objects per scene.
                     </p>
                 </div>
                 <div class="column is-centered">
-                    <img src="./static/images/sim_type.png" style="width:75%"></img>
+                    <img src="./static/images/sim_type.png" style="width:100%"></img>
                 </div>
 
                 <div class="content has-text-centered">
