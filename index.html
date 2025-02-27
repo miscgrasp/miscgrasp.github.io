@@ -392,29 +392,22 @@
                 <h2 class="title is-3">Simulation Experiments</h2>
                 <div class="content has-text-justified">
                     <p>
-                        We evaluated our method on a widely used grasping benchmark with 303 training and 40
-                        test objects from various object datasets. Two camera configurations were tested: a single-view,
-                        with a randomly positioned camera on a spherical region around the workspace, and a three-camera
-                        multi-view setup.
-                        We assessed two tasks: $\textbf{$\textit{Pile}$}$ (as shown left), where objects are randomly
-                        dropped into the workspace, and $\textbf{$\textit{Packed}$}$ (as shown right), where objects are
-                        placed upright
-                        in random poses.
+                        We conduct four grasping experiments using four object sets: the EGAD test set, the pile and packed 
+                        test set, and the adversarial object set. These experiments focus on pinch and power grasps across 
+                        different scene types. The <strong>EGAD-Single</strong>strong> experiment scales the EGAD test set 
+                        to 147 objects, ranked by geometric complexity and grasp difficulty, and evaluates performance on easy, 
+                        medium, and hard sets. The <strong>Pile-Pile</strong>strong> and <strong>Packed-Packed<strong> experiments use the pile and packed test 
+                        sets with 10 objects per scene, increasing complexity. The <strong>EGAD+Adv-Pile</strong>strong experiment combines the 
+                        EGAD test set and adversarial object set to test pinch grasp in pile scenes with 10 objects per scene.
                     </p>
                 </div>
-                <!--                <div class="content has-text-centered" style="margin-top: 20px; margin-bottom: -10px">-->
-                <!--                    <p>-->
-                <!--                        <span style="margin-right: 360px;">$\textbf{Pile Scene}$  </span>-->
-                <!--                        $\textbf{Packed Scene}$-->
-                <!--                    </p>-->
-                <!--                </div>-->
                 <div class="column is-centered">
                     <img src="./static/images/sim_setting.png" style="width:75%"></img>
                 </div>
 
                 <div class="content has-text-centered">
                     <p>
-                        $\textbf{Visualization of Pile Scene}$
+                        $\textbf{Visualization of EGAD+ADV-Pile}$
                     </p>
                 </div>
 
@@ -422,54 +415,29 @@
                     <div class="column is-centered">
                         <div class="video-container">
                             <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_1.mp4" style="border-radius:10px;"></video>
+                                   src="./static/videos/egad+adv-pile_27.mp4" style="border-radius:10px;"></video>
 
                         </div>
                     </div>
                     <div class="column is-centered">
                         <div class="video-container">
                             <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_2.mp4" style="border-radius:10px;"></video>
+                                   src="./static/videos/egad+adv-pile_78.mp4" style="border-radius:10px;"></video>
 
                         </div>
                     </div>
                     <div class="column is-centered">
                         <div class="video-container">
                             <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_3.mp4" style="border-radius:10px;"></video>
+                                   src="./static/videos/egad+adv-pile_79.mp4" style="border-radius:10px;"></video>
 
                         </div>
                     </div>
-
-                </div>
-
-                <div class="columns is-centered">
-
-                    <div class="column is-centered">
-                        <div class="video-container">
-                            <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_6.mp4" style="border-radius:10px;"></video>
-                        </div>
-                    </div>
-                    <div class="column is-centered">
-                        <div class="video-container">
-                            <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_5.mp4" style="border-radius:10px;"></video>
-                        </div>
-                    </div>
-                    <div class="column is-centered">
-                        <div class="video-container">
-                            <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_4.mp4" style="border-radius:10px;"></video>
-                        </div>
-                    </div>
-
-
                 </div>
 
                 <div class="content has-text-centered">
                     <p>
-                        $\textbf{Visualization of Packed Scene}$
+                        $\textbf{Visualization of Pile-Pile}$
                     </p>
                 </div>
 
@@ -477,25 +445,31 @@
                     <div class="column is-centered">
                         <div class="video-container">
                             <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_7.mp4" style="border-radius:10px;"></video>
+                                   src="./static/videos/pile-pile_39.mp4" style="border-radius:10px;"></video>
 
                         </div>
                     </div>
                     <div class="column is-centered">
                         <div class="video-container">
                             <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_8.mp4" style="border-radius:10px;"></video>
+                                   src="./static/videos/pile-pile_74.mp4" style="border-radius:10px;"></video>
 
                         </div>
                     </div>
                     <div class="column is-centered">
                         <div class="video-container">
                             <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_9.mp4" style="border-radius:10px;"></video>
+                                   src="./static/videos/pile-pile_76.mp4" style="border-radius:10px;"></video>
 
                         </div>
                     </div>
 
+                </div>
+                
+                <div class="content has-text-centered">
+                    <p>
+                        $\textbf{Visualization of Packed-Packed}$
+                    </p>
                 </div>
 
                 <div class="columns is-centered">
@@ -503,19 +477,19 @@
                     <div class="column is-centered">
                         <div class="video-container">
                             <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_10.mp4" style="border-radius:10px;"></video>
+                                   src="./static/videos/packed-packed_28.mp4" style="border-radius:10px;"></video>
                         </div>
                     </div>
                     <div class="column is-centered">
                         <div class="video-container">
                             <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_11.mp4" style="border-radius:10px;"></video>
+                                   src="./static/videos/packed-packed_61.mp4" style="border-radius:10px;"></video>
                         </div>
                     </div>
                     <div class="column is-centered">
                         <div class="video-container">
                             <video class="center" playsinline="" autoplay="" loop="" muted=""
-                                   src="./static/videos/sim_demo_12.mp4" style="border-radius:10px;"></video>
+                                   src="./static/videos/packed-packed_76.mp4" style="border-radius:10px;"></video>
                         </div>
                     </div>
 
