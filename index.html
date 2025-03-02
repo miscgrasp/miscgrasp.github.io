@@ -290,23 +290,22 @@
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
-                      <p align="center">
+                    <p align="center">
                         <img src="./static/images/fig1_300.png" alt="" style="width:70%"></img>
                     </p>
-<!--                     <p>
-                        While grasp detection is an important part of any robotic manipulation pipeline, reliable and
-                        accurate grasp detection in $SE(3)$ remains a research challenge. Many robotics applications in
-                        unstructured environments such as the home or warehouse would benefit a lot from better grasp
-                        performance. This paper proposes a novel framework for detecting $SE(3)$ grasp poses based on
-                        point cloud input. Our main contribution is to propose an $SE(3)$-equivariant model that maps
-                        each point in the cloud to a continuous grasp quality function over the 2-sphere $S^2$ using a
-                        spherical harmonic basis. Compared with reasoning about a finite set of samples, this
-                        formulation improves the accuracy and efficiency of our model when a large number of samples
-                        would otherwise be needed. In order to accomplish this, we propose a novel variation on
-                        EquiFormerV2 that leverages a UNet-style encoder-decoder architecture to enlarge the number of
-                        points the model can handle. Our resulting method, which we name $\textit{OrbitGrasp}$,
-                        significantly outperforms baselines in both simulation and physical experiments.
-                    </p> -->
+                    <p>
+                        Robotic grasping faces challenges in adapting to objects with varying shapes 
+                        and sizes. In this paper, we introduce MISCGrasp, a volumetric grasping method 
+                        that integrates multi-scale feature extraction with contrastive feature enhancement 
+                        for self-adaptive grasping. We propose a query-based interaction between high-level 
+                        and low-level features through the Insight Transformer, while the Empower Transformer 
+                        selectively attends to the highest-level features, which synergistically strikes a 
+                        balance between focusing on fine geometric details and overall geometric structures. 
+                        Furthermore, MISCGrasp utilizes multi-scale contrastive learning to exploit similarities 
+                        among positive grasp samples, ensuring consistency across multi-scale features. Extensive 
+                        experiments in both simulated and real-world environments demonstrate that MISCGrasp 
+                        outperforms baseline and variant methods in tabletop decluttering tasks.
+                    </p>
                 </div>
             </div>
         </div>
@@ -333,37 +332,26 @@
             <div class="column">
                 <h2 class="title is-3">Introduction</h2>
                 <div class="content has-text-justified">
-<!--                     <p>
-                        In this paper, we propose $\textbf{OrbitGrasp}$, an $SE(3)$-equivariant grasp learning framework
-                        using spherical harmonics for 6-DoF grasp detection. Our method leverages
-                        an $SE(3)$-equivariant network that maps each point in a point cloud to a grasp quality
-                        function over the 2-sphere $S^2$. For each point in the cloud, this function
-                        encodes the grasp quality for possible hand approach directions toward that point.
-                        By applying geometric constrains, we reduce the action space to an $\textit{orbit}$ (i.e.,
-                        an $S^1$ manifold embedded in $S^2$) of approach directions, defined relative to the
-                        surface normal at each contact point. As shown below:
-                    </p>
-                    <p>
-                        We infer an orbit of grasps (yellow ellipse) defined relative to the surface normal (red arrow)
-                        at the contact point (pink dot). Since our model is equivariant over $SO(3)$, the optimal pose
-                        (represented by the solid gripper) on the orbit rotates consistently with the scene (left and
-                        right show a rotation by 90 degrees).
-                    </p> -->
+                    <ol type="i">
+                        <li>
+                            We introduce MISCGrasp, a framework that enables self-adaptive 6-DoF grasping by seamlessly 
+                            integrating power and pinch grasps. By incorporating geometric features at multiple scales, 
+                            MISCGrasp improves the ability of grasping to handle a wide variety of objects.
+                        </li>
+                        <li>
+                            A self-supervised feature enhancement method is proposed which further exploits the potential 
+                            of multi-scale geometric features and ensures consistency among them at  each level using contrastive learning.
+                        </li>
+                        <li>
+                            We generate a grasping dataset rich in both power and pinch grasps using a geometrically diverse object set, which 
+                            lays the foundation for  evaluating 6-DoF grasping of objects of different shapes and sizes. Through extensive 
+                            experiments, we demonstrate that MISCGrasp significantly outperforms baseline methods and variants, especially in 
+                            scenarios suitable for pinch grasp.
+                        </li>
+                    </ol>
                     <p align="center">
                         <img src="./static/images/fig2_300.png"></img>
                     </p>
-<!--                     <p>
-                        OrbitGrasp divides the input point cloud into several sub-point clouds $B_i$ (neighborhoods
-                        around center points $c_i$) and processes each through the network and
-                        outputs a grasp quality function $f_p\colon S^2 \to \mathbb{R}$ for each point $p$ in $B_i$. The
-                        model produces Fourier coefficients for each $p$ (represented as different channels in the
-                        network output), which are used to reconstruct $f_p$ based on spherical harmonics. The Orbit
-                        Pose Sampler generates multiple poses for each $p$ perpendicular to the surface normal $n_p$ and
-                        queries corresponding $f_p(\cdot)$ to evaluate these grasp qualities along the orbit. The grasp
-                        with the highest quality is then selected, thereby producing the optimal grasp pose $a^*$, as
-                        shown on the right.
-                    </p> -->
-
                 </div>
             </div>
         </div>
